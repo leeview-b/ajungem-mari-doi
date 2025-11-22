@@ -34,7 +34,7 @@ export default function NewMessagePage() {
         subject: formData.get('subject') as string,
         content: formData.get('content') as string,
         is_broadcast: isBroadcast,
-      });
+      } as any);
 
       if (insertError) throw insertError;
 

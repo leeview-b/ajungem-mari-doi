@@ -48,7 +48,7 @@ export default function NewReportPage() {
         activity_description: formData.get('activity_description') as string,
         testimonials: formData.get('testimonials') as string || null,
         child_observations: formData.get('child_observations') as string || null,
-      });
+      } as any);
 
       if (insertError) throw insertError;
 

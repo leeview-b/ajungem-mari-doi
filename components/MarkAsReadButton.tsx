@@ -12,9 +12,9 @@ export default function MarkAsReadButton({ messageId }: { messageId: string }) {
   const handleMarkAsRead = async () => {
     setLoading(true);
     try {
-      await supabase
-        .from('messages')
-        .update({ read_at: new Date().toISOString() })
+      const updateData: any = { read_at: new Date().toISOString() };
+      await (supabase.from('messages') as any)
+        .update(updateData)
         .eq('id', messageId);
 
       router.refresh();

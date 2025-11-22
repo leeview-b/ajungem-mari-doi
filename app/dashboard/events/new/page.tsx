@@ -44,7 +44,7 @@ export default function NewEventPage() {
         duration_hours: parseFloat(formData.get('duration_hours') as string),
         activity_type: formData.get('activity_type') as string,
         created_by: user.id,
-      });
+      } as any);
 
       if (insertError) throw insertError;
 
